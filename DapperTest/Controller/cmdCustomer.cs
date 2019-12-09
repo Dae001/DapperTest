@@ -10,8 +10,6 @@ namespace DapperTest.Controller
     {
         Repository<Customer> cmd = new Repository<Customer>();
 
-
-
         public List<Customer> GetAllCustmer()
         {
             try
