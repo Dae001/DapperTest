@@ -45,7 +45,7 @@ namespace DapperTest
         private void btnCustomerAll_Click(object sender, EventArgs e)
         {
             // 멀티로 읽기와 트랜잭션 Query Multi-Mapping (One to Many)
-            string sql = "SELECT TOP 10 * FROM Orders AS A INNER JOIN OrderDetails AS B ON A.OrderID = B.OrderID;";
+            // string sql = "SELECT TOP 10 * FROM Orders AS A INNER JOIN OrderDetails AS B ON A.OrderID = B.OrderID;";
 
             //using (var connection = new SqlConnection(conn))
             //{

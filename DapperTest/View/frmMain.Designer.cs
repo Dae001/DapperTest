@@ -321,7 +321,7 @@
             // 
             // grdCusttomer
             // 
-            this.grdCusttomer.Location = new System.Drawing.Point(51, 211);
+            this.grdCusttomer.Location = new System.Drawing.Point(12, 171);
             this.grdCusttomer.MainView = this.gridView1;
             this.grdCusttomer.Name = "grdCusttomer";
             this.grdCusttomer.Size = new System.Drawing.Size(546, 288);
