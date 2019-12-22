@@ -6,9 +6,21 @@ using System.Linq;
 
 namespace DapperTest.Controller
 {
-    class cmdCustomer
+    public class cmdCustomer
     {
         Repository<Customer> cmd = new Repository<Customer>();
+
+        public List<Customer> GetbyIDCustmer(string customerID)
+        {
+            try
+            {
+                return cmd.GetById("Select * From Customer Where CustomerID Like @CustomerID + '%'", new { CustomerID = customerID }).ToList();
+                }
+            catch (Exception)
+            {
+                return null;
+            }
+        }
 
         public List<Customer> GetAllCustmer()
         {
@@ -79,6 +91,7 @@ namespace DapperTest.Controller
                 return false;
             }
         }
+
     }
 }
 
