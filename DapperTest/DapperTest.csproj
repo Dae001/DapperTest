@@ -63,20 +63,20 @@
     <Compile Include="Factory\Database.cs" />
     <Compile Include="Factory\IRepository.cs" />
     <Compile Include="Factory\Repository.cs" />
-    <Compile Include="View\Form1.cs">
+    <Compile Include="View\frmMain.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="View\Form1.Designer.cs">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <Compile Include="View\frmMain.Designer.cs">
+      <DependentUpon>frmMain.cs</DependentUpon>
     </Compile>
     <Compile Include="Model\Customer.cs" />
-    <Compile Include="Model\Order_Detail.cs" />
+    <Compile Include="Model\OrderDetail.cs" />
     <Compile Include="Model\Order.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Properties\licenses.licx" />
-    <EmbeddedResource Include="View\Form1.resx">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <EmbeddedResource Include="View\frmMain.resx">
+      <DependentUpon>frmMain.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -89,6 +89,7 @@
     </Compile>
     <None Include="App.config" />
     <None Include="packages.config" />
+    <None Include="Properties\DataSources\DapperTest.Model.Customer.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

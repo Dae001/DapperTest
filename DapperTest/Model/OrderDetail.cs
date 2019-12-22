@@ -2,7 +2,7 @@
 
 namespace DapperTest.Model
 {
-    public class Order_Detail
+    public class OrderDetail
     {
         public int OrderID { get; set; } // int, not null
         public int ProductID { get; set; } // int, not null

@@ -5,10 +5,10 @@ namespace DapperTest.Model
 {
     public class Order
     {
-        public Order()
-        {
-            this.Order_Details = new List<Order_Detail>();
-        }
+        //public Order()
+        //{
+        //    this.OrderDetails = new List<OrderDetail>();
+        //}
 
         public int OrderID { get; set; } // int, not null
         public string CustomerID { get; set; } // nchar(5), null
@@ -25,7 +25,7 @@ namespace DapperTest.Model
         public string ShipPostalCode { get; set; } // nvarchar(10), null
         public string ShipCountry { get; set; } // nvarchar(15), null
       
-        public IEnumerable<Order_Detail> Order_Details { get; set; }
+        public IEnumerable<OrderDetail> OrderDetails { get; set; }
         // public Customer Customer { get; set; }
         //public Employees Employee { get; set; }
         //public Shippers ShippedBy { get; set; }
