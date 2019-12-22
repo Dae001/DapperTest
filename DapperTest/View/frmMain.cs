@@ -39,6 +39,7 @@ namespace DapperTest
                 // 멀티로 읽기와 트랜잭션 
 
                 customerBindingSource.DataSource = cust;
+
             }
         }
 
