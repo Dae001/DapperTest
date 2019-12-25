@@ -1,10 +1,12 @@
-﻿using Dapper;
-using DapperTest.Controller;
-using DapperTest.Model;
-using System;
-using System.Collections.Generic;
+﻿using System;
 using System.Configuration;
+using System.Data;
 using System.Data.SqlClient;
+
+using DapperTest.Model;
+using Dapper;
+using Dapper.Contrib.Extensions;
+using System.Collections.Generic;
 
 namespace DapperTest
 {
@@ -19,20 +21,24 @@ namespace DapperTest
 
         private void btnCustomerID_Click(object sender, EventArgs e)
         {
-            string sqlCust = "SELECT * FROM dbo.Customers Where CustomerID Like @CustomerID + '%'";
-            string sqlOrder  = "SELECT * FROM dbo.Orders where CustomerID Like @CustomerID + '%' and OrderDate = @OrderDate";
-            string sqlOrderDetail = "SELECT * FROM dbo.OrderDetails where OrderID = @OrderID";
+            CustomerSlect();
+        }
 
+        private void CustomerSlect()
+        {
             using (var db = new SqlConnection(conn))
             {
                 // Customers를 코드성 테이블로 보내고 Order을 주검색으로
+                string sqlCust = "SELECT * FROM dbo.Customers Where CustomerID Like @CustomerID + '%'";
                 var cust = db.QueryFirstOrDefault<Customer>(sqlCust, new { CustomerID = txtCustomerID.Text.Trim() });
                 txtCompanyName.Text = cust.CompanyName;
 
                 // 검색후 테이타가 없거나 여러개 일때 Exception처리를..
-                var order = db.QuerySingleOrDefault<Order>(sqlOrder, new { CustomerID = txtCustomerID.Text.Trim(), OrderDate = txtOderDate.Text.Trim()});
+                string sqlOrder = "SELECT * FROM dbo.Orders where CustomerID Like @CustomerID + '%' and OrderDate = @OrderDate";
+                var order = db.QuerySingleOrDefault<Order>(sqlOrder, new { CustomerID = txtCustomerID.Text.Trim(), OrderDate = txtOderDate.Text.Trim() });
                 txtOderDate.Text = order.OrderDate.ToString();
-                
+
+                string sqlOrderDetail = "SELECT * FROM dbo.OrderDetails where OrderID = @OrderID";
                 var order_Detail = db.Query<OrderDetail>(sqlOrderDetail, new { OrderID = order.OrderID });
                 grdCusttomer.DataSource = order_Detail;
 
@@ -72,6 +78,22 @@ namespace DapperTest
 
         }
 
+        private void btnGet_Click(object sender, EventArgs e)
+        {
+            //using (IDbConnection db = new SqlConnection(conn))
+            //{
+            //    var cust = db.Get<Customer>("ALFKI");
+            //    customerBindingSource.DataSource = cust;
+            //}
 
+            using (IDbConnection db = new SqlConnection(conn))
+            {
+                var custs = db.GetAll<Customer>();
+                customerBindingSource.DataSource = custs;
+                grdCusttomer.DataSource = customerBindingSource;
+            }
+
+            // GridControl 일련번호부여
+        }
     }
 }

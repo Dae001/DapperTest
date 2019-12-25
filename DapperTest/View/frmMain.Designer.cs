@@ -47,6 +47,7 @@
             this.txtCompanyName = new DevExpress.XtraEditors.TextEdit();
             this.btnCustomerAll = new DevExpress.XtraEditors.SimpleButton();
             this.groupControl1 = new DevExpress.XtraEditors.GroupControl();
+            this.btnGet = new DevExpress.XtraEditors.SimpleButton();
             this.txtOderDate = new DevExpress.XtraEditors.TextEdit();
             this.lblOrderDate = new DevExpress.XtraEditors.LabelControl();
             this.lblCustname = new DevExpress.XtraEditors.LabelControl();
@@ -77,6 +78,7 @@
             this.phoneTextEdit = new DevExpress.XtraEditors.TextEdit();
             this.postalCodeTextEdit = new DevExpress.XtraEditors.TextEdit();
             this.regionTextEdit = new DevExpress.XtraEditors.TextEdit();
+            this.groupControl2 = new DevExpress.XtraEditors.GroupControl();
             addressLabel = new System.Windows.Forms.Label();
             cityLabel = new System.Windows.Forms.Label();
             companyNameLabel = new System.Windows.Forms.Label();
@@ -109,13 +111,15 @@
             ((System.ComponentModel.ISupportInitialize)(this.phoneTextEdit.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.postalCodeTextEdit.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.regionTextEdit.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.groupControl2)).BeginInit();
+            this.groupControl2.SuspendLayout();
             this.SuspendLayout();
             // 
             // addressLabel
             // 
             addressLabel.AutoSize = true;
             addressLabel.Font = new System.Drawing.Font("맑은 고딕", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            addressLabel.Location = new System.Drawing.Point(616, 48);
+            addressLabel.Location = new System.Drawing.Point(17, 45);
             addressLabel.Name = "addressLabel";
             addressLabel.Size = new System.Drawing.Size(60, 17);
             addressLabel.TabIndex = 6;
@@ -125,7 +129,7 @@
             // 
             cityLabel.AutoSize = true;
             cityLabel.Font = new System.Drawing.Font("맑은 고딕", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            cityLabel.Location = new System.Drawing.Point(616, 89);
+            cityLabel.Location = new System.Drawing.Point(17, 86);
             cityLabel.Name = "cityLabel";
             cityLabel.Size = new System.Drawing.Size(32, 17);
             cityLabel.TabIndex = 8;
@@ -135,7 +139,7 @@
             // 
             companyNameLabel.AutoSize = true;
             companyNameLabel.Font = new System.Drawing.Font("맑은 고딕", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            companyNameLabel.Location = new System.Drawing.Point(616, 130);
+            companyNameLabel.Location = new System.Drawing.Point(17, 127);
             companyNameLabel.Name = "companyNameLabel";
             companyNameLabel.Size = new System.Drawing.Size(107, 17);
             companyNameLabel.TabIndex = 10;
@@ -145,7 +149,7 @@
             // 
             contactNameLabel.AutoSize = true;
             contactNameLabel.Font = new System.Drawing.Font("맑은 고딕", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            contactNameLabel.Location = new System.Drawing.Point(616, 171);
+            contactNameLabel.Location = new System.Drawing.Point(17, 168);
             contactNameLabel.Name = "contactNameLabel";
             contactNameLabel.Size = new System.Drawing.Size(96, 17);
             contactNameLabel.TabIndex = 12;
@@ -155,7 +159,7 @@
             // 
             contactTitleLabel.AutoSize = true;
             contactTitleLabel.Font = new System.Drawing.Font("맑은 고딕", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            contactTitleLabel.Location = new System.Drawing.Point(616, 212);
+            contactTitleLabel.Location = new System.Drawing.Point(17, 209);
             contactTitleLabel.Name = "contactTitleLabel";
             contactTitleLabel.Size = new System.Drawing.Size(85, 17);
             contactTitleLabel.TabIndex = 14;
@@ -165,7 +169,7 @@
             // 
             countryLabel.AutoSize = true;
             countryLabel.Font = new System.Drawing.Font("맑은 고딕", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            countryLabel.Location = new System.Drawing.Point(616, 253);
+            countryLabel.Location = new System.Drawing.Point(17, 250);
             countryLabel.Name = "countryLabel";
             countryLabel.Size = new System.Drawing.Size(58, 17);
             countryLabel.TabIndex = 16;
@@ -175,7 +179,7 @@
             // 
             customerIDLabel.AutoSize = true;
             customerIDLabel.Font = new System.Drawing.Font("맑은 고딕", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            customerIDLabel.Location = new System.Drawing.Point(616, 294);
+            customerIDLabel.Location = new System.Drawing.Point(17, 291);
             customerIDLabel.Name = "customerIDLabel";
             customerIDLabel.Size = new System.Drawing.Size(86, 17);
             customerIDLabel.TabIndex = 18;
@@ -185,7 +189,7 @@
             // 
             faxLabel.AutoSize = true;
             faxLabel.Font = new System.Drawing.Font("맑은 고딕", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            faxLabel.Location = new System.Drawing.Point(616, 335);
+            faxLabel.Location = new System.Drawing.Point(17, 332);
             faxLabel.Name = "faxLabel";
             faxLabel.Size = new System.Drawing.Size(30, 17);
             faxLabel.TabIndex = 20;
@@ -195,7 +199,7 @@
             // 
             phoneLabel.AutoSize = true;
             phoneLabel.Font = new System.Drawing.Font("맑은 고딕", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            phoneLabel.Location = new System.Drawing.Point(616, 376);
+            phoneLabel.Location = new System.Drawing.Point(17, 373);
             phoneLabel.Name = "phoneLabel";
             phoneLabel.Size = new System.Drawing.Size(49, 17);
             phoneLabel.TabIndex = 22;
@@ -205,7 +209,7 @@
             // 
             postalCodeLabel.AutoSize = true;
             postalCodeLabel.Font = new System.Drawing.Font("맑은 고딕", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            postalCodeLabel.Location = new System.Drawing.Point(616, 417);
+            postalCodeLabel.Location = new System.Drawing.Point(17, 414);
             postalCodeLabel.Name = "postalCodeLabel";
             postalCodeLabel.Size = new System.Drawing.Size(82, 17);
             postalCodeLabel.TabIndex = 24;
@@ -215,7 +219,7 @@
             // 
             regionLabel.AutoSize = true;
             regionLabel.Font = new System.Drawing.Font("맑은 고딕", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            regionLabel.Location = new System.Drawing.Point(616, 458);
+            regionLabel.Location = new System.Drawing.Point(17, 455);
             regionLabel.Name = "regionLabel";
             regionLabel.Size = new System.Drawing.Size(53, 17);
             regionLabel.TabIndex = 26;
@@ -225,7 +229,7 @@
             // 
             this.btnCustomerID.Appearance.Font = new System.Drawing.Font("맑은 고딕", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCustomerID.Appearance.Options.UseFont = true;
-            this.btnCustomerID.Location = new System.Drawing.Point(471, 67);
+            this.btnCustomerID.Location = new System.Drawing.Point(317, 69);
             this.btnCustomerID.Name = "btnCustomerID";
             this.btnCustomerID.Size = new System.Drawing.Size(75, 25);
             this.btnCustomerID.TabIndex = 0;
@@ -239,7 +243,7 @@
             this.txtCustomerID.Name = "txtCustomerID";
             this.txtCustomerID.Properties.Appearance.Font = new System.Drawing.Font("맑은 고딕", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtCustomerID.Properties.Appearance.Options.UseFont = true;
-            this.txtCustomerID.Size = new System.Drawing.Size(189, 22);
+            this.txtCustomerID.Size = new System.Drawing.Size(218, 22);
             this.txtCustomerID.TabIndex = 1;
             // 
             // lblCustomerID
@@ -255,18 +259,18 @@
             // txtCompanyName
             // 
             this.txtCompanyName.EditValue = "";
-            this.txtCompanyName.Location = new System.Drawing.Point(81, 66);
+            this.txtCompanyName.Location = new System.Drawing.Point(81, 72);
             this.txtCompanyName.Name = "txtCompanyName";
             this.txtCompanyName.Properties.Appearance.Font = new System.Drawing.Font("맑은 고딕", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtCompanyName.Properties.Appearance.Options.UseFont = true;
-            this.txtCompanyName.Size = new System.Drawing.Size(189, 22);
+            this.txtCompanyName.Size = new System.Drawing.Size(218, 22);
             this.txtCompanyName.TabIndex = 3;
             // 
             // btnCustomerAll
             // 
             this.btnCustomerAll.Appearance.Font = new System.Drawing.Font("맑은 고딕", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCustomerAll.Appearance.Options.UseFont = true;
-            this.btnCustomerAll.Location = new System.Drawing.Point(471, 36);
+            this.btnCustomerAll.Location = new System.Drawing.Point(317, 38);
             this.btnCustomerAll.Name = "btnCustomerAll";
             this.btnCustomerAll.Size = new System.Drawing.Size(75, 25);
             this.btnCustomerAll.TabIndex = 0;
@@ -275,6 +279,7 @@
             // 
             // groupControl1
             // 
+            this.groupControl1.Controls.Add(this.btnGet);
             this.groupControl1.Controls.Add(this.txtCustomerID);
             this.groupControl1.Controls.Add(this.txtOderDate);
             this.groupControl1.Controls.Add(this.txtCompanyName);
@@ -283,27 +288,38 @@
             this.groupControl1.Controls.Add(this.lblCustname);
             this.groupControl1.Controls.Add(this.lblCustomerID);
             this.groupControl1.Controls.Add(this.btnCustomerAll);
-            this.groupControl1.Location = new System.Drawing.Point(12, 12);
+            this.groupControl1.Location = new System.Drawing.Point(404, 46);
             this.groupControl1.Name = "groupControl1";
-            this.groupControl1.Size = new System.Drawing.Size(567, 143);
+            this.groupControl1.Size = new System.Drawing.Size(546, 143);
             this.groupControl1.TabIndex = 4;
             this.groupControl1.Text = "groupControl1";
+            // 
+            // btnGet
+            // 
+            this.btnGet.Appearance.Font = new System.Drawing.Font("맑은 고딕", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnGet.Appearance.Options.UseFont = true;
+            this.btnGet.Location = new System.Drawing.Point(317, 100);
+            this.btnGet.Name = "btnGet";
+            this.btnGet.Size = new System.Drawing.Size(75, 25);
+            this.btnGet.TabIndex = 4;
+            this.btnGet.Text = "GET";
+            this.btnGet.Click += new System.EventHandler(this.btnGet_Click);
             // 
             // txtOderDate
             // 
             this.txtOderDate.EditValue = "1996-07-08";
-            this.txtOderDate.Location = new System.Drawing.Point(81, 94);
+            this.txtOderDate.Location = new System.Drawing.Point(81, 105);
             this.txtOderDate.Name = "txtOderDate";
             this.txtOderDate.Properties.Appearance.Font = new System.Drawing.Font("맑은 고딕", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtOderDate.Properties.Appearance.Options.UseFont = true;
-            this.txtOderDate.Size = new System.Drawing.Size(189, 22);
+            this.txtOderDate.Size = new System.Drawing.Size(218, 22);
             this.txtOderDate.TabIndex = 3;
             // 
             // lblOrderDate
             // 
             this.lblOrderDate.Appearance.Font = new System.Drawing.Font("맑은 고딕", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblOrderDate.Appearance.Options.UseFont = true;
-            this.lblOrderDate.Location = new System.Drawing.Point(39, 97);
+            this.lblOrderDate.Location = new System.Drawing.Point(39, 109);
             this.lblOrderDate.Name = "lblOrderDate";
             this.lblOrderDate.Size = new System.Drawing.Size(27, 15);
             this.lblOrderDate.TabIndex = 2;
@@ -313,7 +329,7 @@
             // 
             this.lblCustname.Appearance.Font = new System.Drawing.Font("맑은 고딕", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblCustname.Appearance.Options.UseFont = true;
-            this.lblCustname.Location = new System.Drawing.Point(39, 69);
+            this.lblCustname.Location = new System.Drawing.Point(39, 75);
             this.lblCustname.Name = "lblCustname";
             this.lblCustname.Size = new System.Drawing.Size(27, 15);
             this.lblCustname.TabIndex = 2;
@@ -321,10 +337,10 @@
             // 
             // grdCusttomer
             // 
-            this.grdCusttomer.Location = new System.Drawing.Point(12, 171);
+            this.grdCusttomer.Location = new System.Drawing.Point(404, 209);
             this.grdCusttomer.MainView = this.gridView1;
             this.grdCusttomer.Name = "grdCusttomer";
-            this.grdCusttomer.Size = new System.Drawing.Size(546, 288);
+            this.grdCusttomer.Size = new System.Drawing.Size(546, 346);
             this.grdCusttomer.TabIndex = 5;
             this.grdCusttomer.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView1});
@@ -365,17 +381,16 @@
             this.customerBindingNavigator.MovePreviousItem = this.bindingNavigatorMovePreviousItem;
             this.customerBindingNavigator.Name = "customerBindingNavigator";
             this.customerBindingNavigator.PositionItem = this.bindingNavigatorPositionItem;
-            this.customerBindingNavigator.Size = new System.Drawing.Size(965, 25);
+            this.customerBindingNavigator.Size = new System.Drawing.Size(974, 25);
             this.customerBindingNavigator.TabIndex = 6;
             this.customerBindingNavigator.Text = "bindingNavigator1";
             // 
             // bindingNavigatorAddNewItem
             // 
-            this.bindingNavigatorAddNewItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
             this.bindingNavigatorAddNewItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorAddNewItem.Image")));
             this.bindingNavigatorAddNewItem.Name = "bindingNavigatorAddNewItem";
             this.bindingNavigatorAddNewItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorAddNewItem.Size = new System.Drawing.Size(23, 22);
+            this.bindingNavigatorAddNewItem.Size = new System.Drawing.Size(85, 22);
             this.bindingNavigatorAddNewItem.Text = "새로 추가";
             // 
             // bindingNavigatorCountItem
@@ -387,29 +402,26 @@
             // 
             // bindingNavigatorDeleteItem
             // 
-            this.bindingNavigatorDeleteItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
             this.bindingNavigatorDeleteItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorDeleteItem.Image")));
             this.bindingNavigatorDeleteItem.Name = "bindingNavigatorDeleteItem";
             this.bindingNavigatorDeleteItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorDeleteItem.Size = new System.Drawing.Size(23, 22);
+            this.bindingNavigatorDeleteItem.Size = new System.Drawing.Size(54, 22);
             this.bindingNavigatorDeleteItem.Text = "삭제";
             // 
             // bindingNavigatorMoveFirstItem
             // 
-            this.bindingNavigatorMoveFirstItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
             this.bindingNavigatorMoveFirstItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMoveFirstItem.Image")));
             this.bindingNavigatorMoveFirstItem.Name = "bindingNavigatorMoveFirstItem";
             this.bindingNavigatorMoveFirstItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorMoveFirstItem.Size = new System.Drawing.Size(23, 22);
+            this.bindingNavigatorMoveFirstItem.Size = new System.Drawing.Size(111, 22);
             this.bindingNavigatorMoveFirstItem.Text = "처음으로 이동";
             // 
             // bindingNavigatorMovePreviousItem
             // 
-            this.bindingNavigatorMovePreviousItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
             this.bindingNavigatorMovePreviousItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMovePreviousItem.Image")));
             this.bindingNavigatorMovePreviousItem.Name = "bindingNavigatorMovePreviousItem";
             this.bindingNavigatorMovePreviousItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorMovePreviousItem.Size = new System.Drawing.Size(23, 22);
+            this.bindingNavigatorMovePreviousItem.Size = new System.Drawing.Size(111, 22);
             this.bindingNavigatorMovePreviousItem.Text = "이전으로 이동";
             // 
             // bindingNavigatorSeparator
@@ -434,20 +446,18 @@
             // 
             // bindingNavigatorMoveNextItem
             // 
-            this.bindingNavigatorMoveNextItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
             this.bindingNavigatorMoveNextItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMoveNextItem.Image")));
             this.bindingNavigatorMoveNextItem.Name = "bindingNavigatorMoveNextItem";
             this.bindingNavigatorMoveNextItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorMoveNextItem.Size = new System.Drawing.Size(23, 22);
+            this.bindingNavigatorMoveNextItem.Size = new System.Drawing.Size(111, 22);
             this.bindingNavigatorMoveNextItem.Text = "다음으로 이동";
             // 
             // bindingNavigatorMoveLastItem
             // 
-            this.bindingNavigatorMoveLastItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
             this.bindingNavigatorMoveLastItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMoveLastItem.Image")));
             this.bindingNavigatorMoveLastItem.Name = "bindingNavigatorMoveLastItem";
             this.bindingNavigatorMoveLastItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorMoveLastItem.Size = new System.Drawing.Size(23, 22);
+            this.bindingNavigatorMoveLastItem.Size = new System.Drawing.Size(124, 22);
             this.bindingNavigatorMoveLastItem.Text = "마지막으로 이동";
             // 
             // bindingNavigatorSeparator2
@@ -457,17 +467,16 @@
             // 
             // customerBindingNavigatorSaveItem
             // 
-            this.customerBindingNavigatorSaveItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
             this.customerBindingNavigatorSaveItem.Enabled = false;
             this.customerBindingNavigatorSaveItem.Image = ((System.Drawing.Image)(resources.GetObject("customerBindingNavigatorSaveItem.Image")));
             this.customerBindingNavigatorSaveItem.Name = "customerBindingNavigatorSaveItem";
-            this.customerBindingNavigatorSaveItem.Size = new System.Drawing.Size(23, 22);
+            this.customerBindingNavigatorSaveItem.Size = new System.Drawing.Size(98, 22);
             this.customerBindingNavigatorSaveItem.Text = "데이터 저장";
             // 
             // addressTextEdit
             // 
             this.addressTextEdit.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.customerBindingSource, "Address", true));
-            this.addressTextEdit.Location = new System.Drawing.Point(725, 44);
+            this.addressTextEdit.Location = new System.Drawing.Point(126, 41);
             this.addressTextEdit.Name = "addressTextEdit";
             this.addressTextEdit.Properties.Appearance.Font = new System.Drawing.Font("맑은 고딕", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.addressTextEdit.Properties.Appearance.Options.UseFont = true;
@@ -477,7 +486,7 @@
             // cityTextEdit
             // 
             this.cityTextEdit.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.customerBindingSource, "City", true));
-            this.cityTextEdit.Location = new System.Drawing.Point(725, 85);
+            this.cityTextEdit.Location = new System.Drawing.Point(126, 82);
             this.cityTextEdit.Name = "cityTextEdit";
             this.cityTextEdit.Properties.Appearance.Font = new System.Drawing.Font("맑은 고딕", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cityTextEdit.Properties.Appearance.Options.UseFont = true;
@@ -487,7 +496,7 @@
             // companyNameTextEdit
             // 
             this.companyNameTextEdit.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.customerBindingSource, "CompanyName", true));
-            this.companyNameTextEdit.Location = new System.Drawing.Point(725, 126);
+            this.companyNameTextEdit.Location = new System.Drawing.Point(126, 123);
             this.companyNameTextEdit.Name = "companyNameTextEdit";
             this.companyNameTextEdit.Properties.Appearance.Font = new System.Drawing.Font("맑은 고딕", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.companyNameTextEdit.Properties.Appearance.Options.UseFont = true;
@@ -497,7 +506,7 @@
             // contactNameTextEdit
             // 
             this.contactNameTextEdit.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.customerBindingSource, "ContactName", true));
-            this.contactNameTextEdit.Location = new System.Drawing.Point(725, 167);
+            this.contactNameTextEdit.Location = new System.Drawing.Point(126, 164);
             this.contactNameTextEdit.Name = "contactNameTextEdit";
             this.contactNameTextEdit.Properties.Appearance.Font = new System.Drawing.Font("맑은 고딕", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.contactNameTextEdit.Properties.Appearance.Options.UseFont = true;
@@ -507,7 +516,7 @@
             // contactTitleTextEdit
             // 
             this.contactTitleTextEdit.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.customerBindingSource, "ContactTitle", true));
-            this.contactTitleTextEdit.Location = new System.Drawing.Point(725, 208);
+            this.contactTitleTextEdit.Location = new System.Drawing.Point(126, 205);
             this.contactTitleTextEdit.Name = "contactTitleTextEdit";
             this.contactTitleTextEdit.Properties.Appearance.Font = new System.Drawing.Font("맑은 고딕", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.contactTitleTextEdit.Properties.Appearance.Options.UseFont = true;
@@ -517,7 +526,7 @@
             // countryTextEdit
             // 
             this.countryTextEdit.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.customerBindingSource, "Country", true));
-            this.countryTextEdit.Location = new System.Drawing.Point(725, 249);
+            this.countryTextEdit.Location = new System.Drawing.Point(126, 246);
             this.countryTextEdit.Name = "countryTextEdit";
             this.countryTextEdit.Properties.Appearance.Font = new System.Drawing.Font("맑은 고딕", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.countryTextEdit.Properties.Appearance.Options.UseFont = true;
@@ -527,7 +536,7 @@
             // customerIDTextEdit
             // 
             this.customerIDTextEdit.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.customerBindingSource, "CustomerID", true));
-            this.customerIDTextEdit.Location = new System.Drawing.Point(725, 290);
+            this.customerIDTextEdit.Location = new System.Drawing.Point(126, 287);
             this.customerIDTextEdit.Name = "customerIDTextEdit";
             this.customerIDTextEdit.Properties.Appearance.Font = new System.Drawing.Font("맑은 고딕", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.customerIDTextEdit.Properties.Appearance.Options.UseFont = true;
@@ -537,7 +546,7 @@
             // faxTextEdit
             // 
             this.faxTextEdit.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.customerBindingSource, "Fax", true));
-            this.faxTextEdit.Location = new System.Drawing.Point(725, 331);
+            this.faxTextEdit.Location = new System.Drawing.Point(126, 328);
             this.faxTextEdit.Name = "faxTextEdit";
             this.faxTextEdit.Properties.Appearance.Font = new System.Drawing.Font("맑은 고딕", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.faxTextEdit.Properties.Appearance.Options.UseFont = true;
@@ -547,7 +556,7 @@
             // phoneTextEdit
             // 
             this.phoneTextEdit.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.customerBindingSource, "Phone", true));
-            this.phoneTextEdit.Location = new System.Drawing.Point(725, 372);
+            this.phoneTextEdit.Location = new System.Drawing.Point(126, 369);
             this.phoneTextEdit.Name = "phoneTextEdit";
             this.phoneTextEdit.Properties.Appearance.Font = new System.Drawing.Font("맑은 고딕", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.phoneTextEdit.Properties.Appearance.Options.UseFont = true;
@@ -557,7 +566,7 @@
             // postalCodeTextEdit
             // 
             this.postalCodeTextEdit.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.customerBindingSource, "PostalCode", true));
-            this.postalCodeTextEdit.Location = new System.Drawing.Point(725, 413);
+            this.postalCodeTextEdit.Location = new System.Drawing.Point(126, 410);
             this.postalCodeTextEdit.Name = "postalCodeTextEdit";
             this.postalCodeTextEdit.Properties.Appearance.Font = new System.Drawing.Font("맑은 고딕", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.postalCodeTextEdit.Properties.Appearance.Options.UseFont = true;
@@ -567,41 +576,50 @@
             // regionTextEdit
             // 
             this.regionTextEdit.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.customerBindingSource, "Region", true));
-            this.regionTextEdit.Location = new System.Drawing.Point(725, 454);
+            this.regionTextEdit.Location = new System.Drawing.Point(126, 451);
             this.regionTextEdit.Name = "regionTextEdit";
             this.regionTextEdit.Properties.Appearance.Font = new System.Drawing.Font("맑은 고딕", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.regionTextEdit.Properties.Appearance.Options.UseFont = true;
             this.regionTextEdit.Size = new System.Drawing.Size(208, 24);
             this.regionTextEdit.TabIndex = 27;
             // 
+            // groupControl2
+            // 
+            this.groupControl2.Controls.Add(addressLabel);
+            this.groupControl2.Controls.Add(this.regionTextEdit);
+            this.groupControl2.Controls.Add(this.addressTextEdit);
+            this.groupControl2.Controls.Add(regionLabel);
+            this.groupControl2.Controls.Add(cityLabel);
+            this.groupControl2.Controls.Add(this.postalCodeTextEdit);
+            this.groupControl2.Controls.Add(this.cityTextEdit);
+            this.groupControl2.Controls.Add(postalCodeLabel);
+            this.groupControl2.Controls.Add(companyNameLabel);
+            this.groupControl2.Controls.Add(this.phoneTextEdit);
+            this.groupControl2.Controls.Add(this.companyNameTextEdit);
+            this.groupControl2.Controls.Add(phoneLabel);
+            this.groupControl2.Controls.Add(contactNameLabel);
+            this.groupControl2.Controls.Add(this.faxTextEdit);
+            this.groupControl2.Controls.Add(this.contactNameTextEdit);
+            this.groupControl2.Controls.Add(faxLabel);
+            this.groupControl2.Controls.Add(contactTitleLabel);
+            this.groupControl2.Controls.Add(this.customerIDTextEdit);
+            this.groupControl2.Controls.Add(this.contactTitleTextEdit);
+            this.groupControl2.Controls.Add(customerIDLabel);
+            this.groupControl2.Controls.Add(countryLabel);
+            this.groupControl2.Controls.Add(this.countryTextEdit);
+            this.groupControl2.Location = new System.Drawing.Point(12, 42);
+            this.groupControl2.Name = "groupControl2";
+            this.groupControl2.Size = new System.Drawing.Size(369, 514);
+            this.groupControl2.TabIndex = 28;
+            this.groupControl2.Text = "groupControl2";
+            // 
             // Form1
             // 
             this.Appearance.Options.UseFont = true;
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(965, 674);
-            this.Controls.Add(addressLabel);
-            this.Controls.Add(this.addressTextEdit);
-            this.Controls.Add(cityLabel);
-            this.Controls.Add(this.cityTextEdit);
-            this.Controls.Add(companyNameLabel);
-            this.Controls.Add(this.companyNameTextEdit);
-            this.Controls.Add(contactNameLabel);
-            this.Controls.Add(this.contactNameTextEdit);
-            this.Controls.Add(contactTitleLabel);
-            this.Controls.Add(this.contactTitleTextEdit);
-            this.Controls.Add(countryLabel);
-            this.Controls.Add(this.countryTextEdit);
-            this.Controls.Add(customerIDLabel);
-            this.Controls.Add(this.customerIDTextEdit);
-            this.Controls.Add(faxLabel);
-            this.Controls.Add(this.faxTextEdit);
-            this.Controls.Add(phoneLabel);
-            this.Controls.Add(this.phoneTextEdit);
-            this.Controls.Add(postalCodeLabel);
-            this.Controls.Add(this.postalCodeTextEdit);
-            this.Controls.Add(regionLabel);
-            this.Controls.Add(this.regionTextEdit);
+            this.ClientSize = new System.Drawing.Size(974, 591);
+            this.Controls.Add(this.groupControl2);
             this.Controls.Add(this.customerBindingNavigator);
             this.Controls.Add(this.grdCusttomer);
             this.Controls.Add(this.groupControl1);
@@ -631,6 +649,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.phoneTextEdit.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.postalCodeTextEdit.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.regionTextEdit.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.groupControl2)).EndInit();
+            this.groupControl2.ResumeLayout(false);
+            this.groupControl2.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -674,6 +695,8 @@
         private DevExpress.XtraEditors.TextEdit phoneTextEdit;
         private DevExpress.XtraEditors.TextEdit postalCodeTextEdit;
         private DevExpress.XtraEditors.TextEdit regionTextEdit;
+        private DevExpress.XtraEditors.GroupControl groupControl2;
+        private DevExpress.XtraEditors.SimpleButton btnGet;
     }
 }
 

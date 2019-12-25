@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Dapper.Contrib.Extensions;
+using System;
 using System.Collections.Generic;
 
 namespace DapperTest.Model
@@ -9,7 +10,7 @@ namespace DapperTest.Model
         //{
         //    this.OrderDetails = new List<OrderDetail>();
         //}
-
+        [Key]
         public int OrderID { get; set; } // int, not null
         public string CustomerID { get; set; } // nchar(5), null
         public int? EmployeeID { get; set; } // int, null

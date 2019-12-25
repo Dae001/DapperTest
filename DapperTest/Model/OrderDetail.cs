@@ -1,9 +1,11 @@
-﻿using System;
+﻿using Dapper.Contrib.Extensions;
+using System;
 
 namespace DapperTest.Model
 {
     public class OrderDetail
     {
+        [Key]
         public int OrderID { get; set; } // int, not null
         public int ProductID { get; set; } // int, not null
         public decimal UnitPrice { get; set; } // money, not null

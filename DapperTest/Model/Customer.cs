@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using Dapper.Contrib.Extensions;
+using System.Collections.Generic;
 
 namespace DapperTest.Model
 {
@@ -9,7 +10,7 @@ namespace DapperTest.Model
            // this.CustomerCustomerDemoes = new List<CustomerCustomerDemo>();
             this.Orders = new List<Order>();
         }
-
+        [Key]
         public string CustomerID { get; set; } // nchar(5), not null
         public string CompanyName { get; set; } // nvarchar(40), not null
         public string ContactName { get; set; } // nvarchar(30), null
