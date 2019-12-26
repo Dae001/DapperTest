@@ -18,6 +18,11 @@ namespace DapperTest
         public Form1()
         {
             InitializeComponent();
+            // FocusedRow에 칼라 그라데이션 
+            this.gridView1.Appearance.FocusedRow.BackColor = Color.Orange;
+            this.gridView1.Appearance.FocusedRow.BackColor2 = Color.Beige;
+            this.gridView1.Appearance.FocusedRow.GradientMode = System.Drawing.Drawing2D.LinearGradientMode.Horizontal;
+            this.gridView1.Appearance.FocusedRow.Options.UseBackColor = true;
 
             using (IDbConnection db = new SqlConnection(conn))
             {
@@ -25,6 +30,7 @@ namespace DapperTest
                 customerBindingSource.DataSource = custs;
                 grdCusttomer.DataSource = customerBindingSource;
             }
+
         }
 
         private void btnCustomerID_Click(object sender, EventArgs e)
@@ -114,6 +120,7 @@ namespace DapperTest
             }
         }
 
+        // 윈도우 방화벽 인바운드 포트 1433을 열어줌
         // 특정조건의 Row를 그라데이션 처리함
         private void gridView2_RowStyle(object sender, RowStyleEventArgs e)
         {
