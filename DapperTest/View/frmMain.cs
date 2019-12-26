@@ -101,6 +101,8 @@ namespace DapperTest
             }
         }
 
+
+        // 인디케이터 일련번호 생성
         bool indicatorIcon = true;
         private void gridView1_CustomDrawRowIndicator(object sender, RowIndicatorCustomDrawEventArgs e)
         {
