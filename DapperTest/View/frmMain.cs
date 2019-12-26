@@ -101,12 +101,13 @@ namespace DapperTest
             }
         }
 
-
+        
+        // 방화벽 인바운드규칙 1433열어줌 1시간 날라감
         // 인디케이터 일련번호 생성
         bool indicatorIcon = true;
         private void gridView1_CustomDrawRowIndicator(object sender, RowIndicatorCustomDrawEventArgs e)
         {
-           // GridView view = sender as GridView;
+            // GridView view = sender as GridView;
             if (e.Info.IsRowIndicator && e.RowHandle>=0)
             {
                 e.Info.DisplayText = (e.RowHandle+1).ToString();
