@@ -340,15 +340,21 @@
             this.grdCusttomer.Location = new System.Drawing.Point(404, 209);
             this.grdCusttomer.MainView = this.gridView1;
             this.grdCusttomer.Name = "grdCusttomer";
-            this.grdCusttomer.Size = new System.Drawing.Size(546, 346);
+            this.grdCusttomer.Size = new System.Drawing.Size(1140, 346);
             this.grdCusttomer.TabIndex = 5;
             this.grdCusttomer.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView1});
             // 
             // gridView1
             // 
+            this.gridView1.Appearance.OddRow.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.gridView1.Appearance.OddRow.Options.UseBackColor = true;
+            this.gridView1.Appearance.SelectedRow.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.gridView1.Appearance.SelectedRow.Options.UseBackColor = true;
             this.gridView1.GridControl = this.grdCusttomer;
+            this.gridView1.IndicatorWidth = 50;
             this.gridView1.Name = "gridView1";
+            this.gridView1.CustomDrawRowIndicator += new DevExpress.XtraGrid.Views.Grid.RowIndicatorCustomDrawEventHandler(this.gridView1_CustomDrawRowIndicator);
             // 
             // customerBindingSource
             // 
@@ -381,7 +387,7 @@
             this.customerBindingNavigator.MovePreviousItem = this.bindingNavigatorMovePreviousItem;
             this.customerBindingNavigator.Name = "customerBindingNavigator";
             this.customerBindingNavigator.PositionItem = this.bindingNavigatorPositionItem;
-            this.customerBindingNavigator.Size = new System.Drawing.Size(974, 25);
+            this.customerBindingNavigator.Size = new System.Drawing.Size(1556, 25);
             this.customerBindingNavigator.TabIndex = 6;
             this.customerBindingNavigator.Text = "bindingNavigator1";
             // 
@@ -433,7 +439,6 @@
             // 
             this.bindingNavigatorPositionItem.AccessibleName = "위치";
             this.bindingNavigatorPositionItem.AutoSize = false;
-            this.bindingNavigatorPositionItem.Font = new System.Drawing.Font("맑은 고딕", 9F);
             this.bindingNavigatorPositionItem.Name = "bindingNavigatorPositionItem";
             this.bindingNavigatorPositionItem.Size = new System.Drawing.Size(50, 23);
             this.bindingNavigatorPositionItem.Text = "0";
@@ -618,7 +623,7 @@
             this.Appearance.Options.UseFont = true;
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(974, 591);
+            this.ClientSize = new System.Drawing.Size(1556, 591);
             this.Controls.Add(this.groupControl2);
             this.Controls.Add(this.customerBindingNavigator);
             this.Controls.Add(this.grdCusttomer);

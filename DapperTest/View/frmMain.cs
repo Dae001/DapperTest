@@ -6,7 +6,7 @@ using System.Data.SqlClient;
 using DapperTest.Model;
 using Dapper;
 using Dapper.Contrib.Extensions;
-using System.Collections.Generic;
+using DevExpress.XtraGrid.Views.Grid;
 
 namespace DapperTest
 {
@@ -17,6 +17,13 @@ namespace DapperTest
         public Form1()
         {
             InitializeComponent();
+
+            using (IDbConnection db = new SqlConnection(conn))
+            {
+                var custs = db.GetAll<Customer>();
+                customerBindingSource.DataSource = custs;
+                grdCusttomer.DataSource = customerBindingSource;
+            }
         }
 
         private void btnCustomerID_Click(object sender, EventArgs e)
@@ -80,11 +87,11 @@ namespace DapperTest
 
         private void btnGet_Click(object sender, EventArgs e)
         {
-            //using (IDbConnection db = new SqlConnection(conn))
-            //{
-            //    var cust = db.Get<Customer>("ALFKI");
-            //    customerBindingSource.DataSource = cust;
-            //}
+            using (IDbConnection db = new SqlConnection(conn))
+            {
+                var cust = db.Get<Customer>("ALFKI");
+                customerBindingSource.DataSource = cust;
+            }
 
             using (IDbConnection db = new SqlConnection(conn))
             {
@@ -92,8 +99,20 @@ namespace DapperTest
                 customerBindingSource.DataSource = custs;
                 grdCusttomer.DataSource = customerBindingSource;
             }
-
-            // GridControl 일련번호부여
         }
+
+        bool indicatorIcon = true;
+        private void gridView1_CustomDrawRowIndicator(object sender, RowIndicatorCustomDrawEventArgs e)
+        {
+           // GridView view = sender as GridView;
+            if (e.Info.IsRowIndicator && e.RowHandle>=0)
+            {
+                e.Info.DisplayText = (e.RowHandle+1).ToString();
+                if (!indicatorIcon)
+                    e.Info.ImageIndex = -1;
+            }
+        }
+
+
     }
 }
