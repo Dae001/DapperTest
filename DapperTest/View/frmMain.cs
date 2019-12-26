@@ -7,6 +7,7 @@ using DapperTest.Model;
 using Dapper;
 using Dapper.Contrib.Extensions;
 using DevExpress.XtraGrid.Views.Grid;
+using System.Drawing;
 
 namespace DapperTest
 {
@@ -104,12 +105,28 @@ namespace DapperTest
         bool indicatorIcon = true;
         private void gridView1_CustomDrawRowIndicator(object sender, RowIndicatorCustomDrawEventArgs e)
         {
-           // GridView view = sender as GridView;
-            if (e.Info.IsRowIndicator && e.RowHandle>=0)
+            // GridView view = sender as GridView;
+            if (e.Info.IsRowIndicator && e.RowHandle >= 0)
             {
-                e.Info.DisplayText = (e.RowHandle+1).ToString();
+                e.Info.DisplayText = (e.RowHandle + 1).ToString();
                 if (!indicatorIcon)
                     e.Info.ImageIndex = -1;
+            }
+        }
+
+        // 특정조건의 Row를 그라데이션 처리함
+        private void gridView2_RowStyle(object sender, RowStyleEventArgs e)
+        {
+            GridView View = sender as GridView;
+            if (e.RowHandle >= 0)
+            {
+                //컬럼 값이 PRODUCT인 컬럼의 Cell 값을 찾아옴
+                string product = View.GetRowCellDisplayText(e.RowHandle, View.Columns["CustomerID"]);
+                if (product == "ANTON")   // ANTON 경우 Row색 변경
+                {
+                    e.Appearance.BackColor = Color.Red;
+                    e.Appearance.BackColor2 = Color.White;     //그라데이션 처리
+                }
             }
         }
 

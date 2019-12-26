@@ -79,6 +79,19 @@
             this.postalCodeTextEdit = new DevExpress.XtraEditors.TextEdit();
             this.regionTextEdit = new DevExpress.XtraEditors.TextEdit();
             this.groupControl2 = new DevExpress.XtraEditors.GroupControl();
+            this.customerGridControl = new DevExpress.XtraGrid.GridControl();
+            this.gridView2 = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.colCustomerID = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colCompanyName = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colCity = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colAddress = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colCountry = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colFax = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colPhone = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colPostalCode = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colRegion = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colContactName = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colContactTitle = new DevExpress.XtraGrid.Columns.GridColumn();
             addressLabel = new System.Windows.Forms.Label();
             cityLabel = new System.Windows.Forms.Label();
             companyNameLabel = new System.Windows.Forms.Label();
@@ -113,6 +126,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.regionTextEdit.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl2)).BeginInit();
             this.groupControl2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.customerGridControl)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridView2)).BeginInit();
             this.SuspendLayout();
             // 
             // addressLabel
@@ -290,7 +305,7 @@
             this.groupControl1.Controls.Add(this.btnCustomerAll);
             this.groupControl1.Location = new System.Drawing.Point(404, 46);
             this.groupControl1.Name = "groupControl1";
-            this.groupControl1.Size = new System.Drawing.Size(546, 143);
+            this.groupControl1.Size = new System.Drawing.Size(1140, 143);
             this.groupControl1.TabIndex = 4;
             this.groupControl1.Text = "groupControl1";
             // 
@@ -347,6 +362,11 @@
             // 
             // gridView1
             // 
+            this.gridView1.Appearance.HeaderPanel.BackColor = System.Drawing.Color.Red;
+            this.gridView1.Appearance.HeaderPanel.BackColor2 = System.Drawing.Color.White;
+            this.gridView1.Appearance.HeaderPanel.Options.UseBackColor = true;
+            this.gridView1.Appearance.HeaderPanel.Options.UseTextOptions = true;
+            this.gridView1.Appearance.HeaderPanel.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
             this.gridView1.Appearance.OddRow.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
             this.gridView1.Appearance.OddRow.Options.UseBackColor = true;
             this.gridView1.Appearance.SelectedRow.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
@@ -387,7 +407,7 @@
             this.customerBindingNavigator.MovePreviousItem = this.bindingNavigatorMovePreviousItem;
             this.customerBindingNavigator.Name = "customerBindingNavigator";
             this.customerBindingNavigator.PositionItem = this.bindingNavigatorPositionItem;
-            this.customerBindingNavigator.Size = new System.Drawing.Size(1556, 25);
+            this.customerBindingNavigator.Size = new System.Drawing.Size(1577, 25);
             this.customerBindingNavigator.TabIndex = 6;
             this.customerBindingNavigator.Text = "bindingNavigator1";
             // 
@@ -618,12 +638,130 @@
             this.groupControl2.TabIndex = 28;
             this.groupControl2.Text = "groupControl2";
             // 
+            // customerGridControl
+            // 
+            this.customerGridControl.DataSource = this.customerBindingSource;
+            this.customerGridControl.Location = new System.Drawing.Point(403, 584);
+            this.customerGridControl.MainView = this.gridView2;
+            this.customerGridControl.Name = "customerGridControl";
+            this.customerGridControl.Size = new System.Drawing.Size(1141, 278);
+            this.customerGridControl.TabIndex = 28;
+            this.customerGridControl.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
+            this.gridView2});
+            // 
+            // gridView2
+            // 
+            this.gridView2.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
+            this.colCustomerID,
+            this.colCompanyName,
+            this.colCity,
+            this.colAddress,
+            this.colCountry,
+            this.colFax,
+            this.colPhone,
+            this.colPostalCode,
+            this.colRegion,
+            this.colContactName,
+            this.colContactTitle});
+            this.gridView2.GridControl = this.customerGridControl;
+            this.gridView2.Name = "gridView2";
+            this.gridView2.RowStyle += new DevExpress.XtraGrid.Views.Grid.RowStyleEventHandler(this.gridView2_RowStyle);
+            // 
+            // colCustomerID
+            // 
+            this.colCustomerID.FieldName = "CustomerID";
+            this.colCustomerID.Name = "colCustomerID";
+            this.colCustomerID.Visible = true;
+            this.colCustomerID.VisibleIndex = 0;
+            // 
+            // colCompanyName
+            // 
+            this.colCompanyName.AppearanceHeader.Options.UseTextOptions = true;
+            this.colCompanyName.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.colCompanyName.Caption = "회사명";
+            this.colCompanyName.FieldName = "CompanyName";
+            this.colCompanyName.Name = "colCompanyName";
+            this.colCompanyName.Visible = true;
+            this.colCompanyName.VisibleIndex = 1;
+            // 
+            // colCity
+            // 
+            this.colCity.Caption = "도시";
+            this.colCity.FieldName = "City";
+            this.colCity.Name = "colCity";
+            this.colCity.Visible = true;
+            this.colCity.VisibleIndex = 3;
+            // 
+            // colAddress
+            // 
+            this.colAddress.Caption = "주소";
+            this.colAddress.FieldName = "Address";
+            this.colAddress.Name = "colAddress";
+            this.colAddress.Visible = true;
+            this.colAddress.VisibleIndex = 2;
+            // 
+            // colCountry
+            // 
+            this.colCountry.FieldName = "Country";
+            this.colCountry.Name = "colCountry";
+            this.colCountry.Visible = true;
+            this.colCountry.VisibleIndex = 8;
+            // 
+            // colFax
+            // 
+            this.colFax.Caption = "팩스";
+            this.colFax.FieldName = "Fax";
+            this.colFax.Name = "colFax";
+            this.colFax.Visible = true;
+            this.colFax.VisibleIndex = 5;
+            // 
+            // colPhone
+            // 
+            this.colPhone.Caption = "전화";
+            this.colPhone.FieldName = "Phone";
+            this.colPhone.Name = "colPhone";
+            this.colPhone.Visible = true;
+            this.colPhone.VisibleIndex = 4;
+            // 
+            // colPostalCode
+            // 
+            this.colPostalCode.Caption = "우편번호";
+            this.colPostalCode.FieldName = "PostalCode";
+            this.colPostalCode.Name = "colPostalCode";
+            this.colPostalCode.Visible = true;
+            this.colPostalCode.VisibleIndex = 6;
+            // 
+            // colRegion
+            // 
+            this.colRegion.AppearanceHeader.Options.UseTextOptions = true;
+            this.colRegion.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.colRegion.Caption = "지역";
+            this.colRegion.FieldName = "Region";
+            this.colRegion.Name = "colRegion";
+            this.colRegion.Visible = true;
+            this.colRegion.VisibleIndex = 7;
+            // 
+            // colContactName
+            // 
+            this.colContactName.FieldName = "ContactName";
+            this.colContactName.Name = "colContactName";
+            this.colContactName.Visible = true;
+            this.colContactName.VisibleIndex = 9;
+            // 
+            // colContactTitle
+            // 
+            this.colContactTitle.FieldName = "ContactTitle";
+            this.colContactTitle.Name = "colContactTitle";
+            this.colContactTitle.Visible = true;
+            this.colContactTitle.VisibleIndex = 10;
+            // 
             // Form1
             // 
             this.Appearance.Options.UseFont = true;
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1556, 591);
+            this.ClientSize = new System.Drawing.Size(1577, 901);
+            this.Controls.Add(this.customerGridControl);
             this.Controls.Add(this.groupControl2);
             this.Controls.Add(this.customerBindingNavigator);
             this.Controls.Add(this.grdCusttomer);
@@ -657,6 +795,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.groupControl2)).EndInit();
             this.groupControl2.ResumeLayout(false);
             this.groupControl2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.customerGridControl)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridView2)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -702,6 +842,19 @@
         private DevExpress.XtraEditors.TextEdit regionTextEdit;
         private DevExpress.XtraEditors.GroupControl groupControl2;
         private DevExpress.XtraEditors.SimpleButton btnGet;
+        private DevExpress.XtraGrid.GridControl customerGridControl;
+        private DevExpress.XtraGrid.Views.Grid.GridView gridView2;
+        private DevExpress.XtraGrid.Columns.GridColumn colAddress;
+        private DevExpress.XtraGrid.Columns.GridColumn colCustomerID;
+        private DevExpress.XtraGrid.Columns.GridColumn colCompanyName;
+        private DevExpress.XtraGrid.Columns.GridColumn colCity;
+        private DevExpress.XtraGrid.Columns.GridColumn colCountry;
+        private DevExpress.XtraGrid.Columns.GridColumn colFax;
+        private DevExpress.XtraGrid.Columns.GridColumn colPhone;
+        private DevExpress.XtraGrid.Columns.GridColumn colPostalCode;
+        private DevExpress.XtraGrid.Columns.GridColumn colRegion;
+        private DevExpress.XtraGrid.Columns.GridColumn colContactName;
+        private DevExpress.XtraGrid.Columns.GridColumn colContactTitle;
     }
 }
 
