@@ -2,12 +2,12 @@
 using System.Configuration;
 using System.Data;
 using System.Data.SqlClient;
+using System.Drawing;
 
 using DapperTest.Model;
 using Dapper;
 using Dapper.Contrib.Extensions;
 using DevExpress.XtraGrid.Views.Grid;
-using System.Drawing;
 
 namespace DapperTest
 {
@@ -18,18 +18,19 @@ namespace DapperTest
         public Form1()
         {
             InitializeComponent();
-            // FocusedRow에 칼라 그라데이션 
-            this.gridView1.Appearance.FocusedRow.BackColor = Color.Orange;
-            this.gridView1.Appearance.FocusedRow.BackColor2 = Color.Beige;
-            this.gridView1.Appearance.FocusedRow.GradientMode = System.Drawing.Drawing2D.LinearGradientMode.Horizontal;
-            this.gridView1.Appearance.FocusedRow.Options.UseBackColor = true;
 
-            using (IDbConnection db = new SqlConnection(conn))
-            {
-                var custs = db.GetAll<Customer>();
-                customerBindingSource.DataSource = custs;
-                grdCusttomer.DataSource = customerBindingSource;
-            }
+            // FocusedRow에 칼라 그라데이션 
+            gridView1.Appearance.FocusedRow.BackColor = Color.Beige;
+            gridView1.Appearance.FocusedRow.BackColor2 = Color.Orange;
+            gridView1.Appearance.FocusedRow.GradientMode = System.Drawing.Drawing2D.LinearGradientMode.Vertical;
+            //  gridView1.Appearance.FocusedRow.Options.UseBackColor = true;
+
+            //using (IDbConnection db = new SqlConnection(conn))
+            //{
+            //    var custs = db.GetAll<Customer>();
+            //    customerBindingSource.DataSource = custs;
+            //    grdCusttomer.DataSource = customerBindingSource;
+            //}
 
         }
 
@@ -56,10 +57,8 @@ namespace DapperTest
                 var order_Detail = db.Query<OrderDetail>(sqlOrderDetail, new { OrderID = order.OrderID });
                 grdCusttomer.DataSource = order_Detail;
 
-                // 멀티로 읽기와 트랜잭션 
-
+                // TODO: 멀티로 읽기와 트랜잭션 
                 customerBindingSource.DataSource = cust;
-
             }
         }
 
@@ -98,16 +97,18 @@ namespace DapperTest
             {
                 var cust = db.Get<Customer>("ALFKI");
                 customerBindingSource.DataSource = cust;
-            }
-
-            using (IDbConnection db = new SqlConnection(conn))
-            {
-                var custs = db.GetAll<Customer>();
-                customerBindingSource.DataSource = custs;
                 grdCusttomer.DataSource = customerBindingSource;
             }
+
+            //using (IDbConnection db = new SqlConnection(conn))
+            //{
+            //    var custs = db.GetAll<Customer>();
+            //    customerBindingSource.DataSource = custs;
+            //    grdCusttomer.DataSource = customerBindingSource;
+            //}
         }
 
+        // Indicator에 일련번호를 달아줌
         bool indicatorIcon = true;
         private void gridView1_CustomDrawRowIndicator(object sender, RowIndicatorCustomDrawEventArgs e)
         {
